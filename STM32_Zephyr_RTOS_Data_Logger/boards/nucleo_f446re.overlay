@@ -1,0 +1,43 @@
+/ {
+
+    chosen {
+        zephyr,console = &usart2;
+        zephyr,shell-uart = &usart2;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+
+        my_led: led_0 {
+            gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
+            label = "My LED";
+        };
+    };
+
+    buttons {
+        compatible = "gpio-keys";
+
+        my_button: button_0 {
+            gpios = <&gpioc 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+            label = "My Button";
+        };
+    };
+
+    aliases {
+        led0 = &my_led;
+        sw0 = &my_button;
+        uart0 = &usart2;
+    };
+};
+
+&usart2 {
+        pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+        pinctrl-names = "default";
+        current-speed = <115200>;
+        status = "okay";
+};
+
+/* Enable RTC */
+&rtc {
+    status = "okay";
+};

@@ -1,0 +1,59 @@
+# Build directory
+build/
+
+# Zephyr generated files
+zephyr/
+.cache/
+.west/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+build.ninja
+.ninja_deps
+.ninja_log
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Object and binary files
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# West flash artifacts
+*.runner
+
+# Generated configuration
+autoconf.h
+version.h
+
+# Backup files
+*~
+
+# User specific files
+*.user
+*.workspace
